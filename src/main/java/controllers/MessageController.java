@@ -13,8 +13,6 @@ public class MessageController {
     MessageBean messageBean;
 
     public String getSayName() {
-        String name = "".equals(messageBean.getName()) || messageBean.getName() == null ? "" : "Welcome: " + messageBean.getName() + " !!!";
-        messageBean.setName(null);
-        return name;
+        return "".equals(messageBean.getName()) || messageBean.getName() == null ? "" : "Welcome: " + messageBean.getName() + " !!!";
     }
 }
