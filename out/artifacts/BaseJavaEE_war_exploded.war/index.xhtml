@@ -6,14 +6,15 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputText value="Basic Java EE project"/>
+    <h:outputText value="Basic Java EE project, Enter your name below..."/>
+    <br></br>
     <h:form>
-        <h:inputText id="name" value="#{messageBean.name}"/>
+        <h:inputText id="name" value="#{nameBean.name}"/>
         <h:commandButton value="Welcome Me">
             <f:ajax execute="name" render="output" />
         </h:commandButton>
         <br></br>
-        <h:outputText id="output" value="#{messageController.sayName}" />
+        <h:outputText id="output" value="#{nameController.sayName}" />
     </h:form>
 </f:view>
 </html>

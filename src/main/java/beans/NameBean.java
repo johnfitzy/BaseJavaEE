@@ -5,7 +5,7 @@ import javax.inject.Named;
 
 @Named
 @RequestScoped
-public class MessageBean {
+public class NameBean {
 
     private String name;
 
