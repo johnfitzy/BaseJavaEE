@@ -16,6 +16,10 @@ public class NavController {
 
     private static final String SUCCESS = "success";
 
+    public void test(){
+
+    }
+
     public String navigateToPage() {
         if(SUCCESS.equals(navBean.getMessage())) {
             return SUCCESS;
