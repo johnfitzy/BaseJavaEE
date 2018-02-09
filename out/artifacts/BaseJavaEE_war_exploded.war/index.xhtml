@@ -11,10 +11,16 @@
     <h:form>
         <h:inputText id="name" value="#{nameBean.name}"/>
         <h:commandButton value="Welcome Me">
-            <f:ajax execute="name" render="output" />
+            <f:ajax execute="name" render="output"/>
         </h:commandButton>
         <br></br>
-        <h:outputText id="output" value="#{nameController.sayName}" />
+        <h:outputText id="output" value="#{nameController.sayName}"/>
+
+
+    </h:form>
+
+    <h:form>
+        <h:commandButton value="Go to page 2" action="page2"/>
     </h:form>
 </f:view>
 </html>
