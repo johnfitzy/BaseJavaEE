@@ -43,5 +43,48 @@
                 </configuration>
             </plugin>
         </plugins>
+
+
     </build>
+    <profiles>
+        <profile>
+            <id>deploy</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.wildfly.plugins</groupId>
+                        <artifactId>wildfly-maven-plugin</artifactId>
+                        <configuration>
+                            <hostname>vagrant.grad.fun.dis.nz</hostname>
+                            <username>admin</username>
+                            <password>password</password>
+                            <port>9990</port>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>undeploy</id>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>undeploy</goal>
+                                </goals>
+                                <configuration>
+                                    <ignoreMissingDeployment>true</ignoreMissingDeployment>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>deploy</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
